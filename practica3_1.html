@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Untitled Document</title>
+        <style>
+            .par{
+                background:#00CCCC;
+            }
+            .impar{
+                background:#339900;
+            }
+        </style>
+        <script type="text/javascript">
+            var indice = 1;
+            function  cambiarLista() {
+                // 1 obtener los elementos a manipular
+                //  var lista = document.getElementById("lista");
+                //  var lista = document.querySelector("ul");  
+                var lista = document.querySelector("#lista");
+
+                // 2 manipulacion
+                var nodoli = document.createElement("li");//se he acreado un 
+                indice++;
+                nodoli.innerHTML = "Item " + indice;// 
+                nodoli.style.color = "red";
+                // agregar lo nuevo (lo creado) a un elemento existente
+                lista.appendChild(nodoli); //
+            }
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <a href="#" ondblclick="cambiarLista()">Click dos veces</a>
+        <ul id="lista">
+            <li>Item 1</li>    
+
+        </ul>
+
+
+        <input type="button" onclick="agregarCelda();" value="agregar item" />
+        <input type="button" onclick="eliminarCelda();" value="quitar item" />
+        <input type="button" onclick="eliminarTodos();" value="eliminar todos" />
+
+        <table id="tablita" border="1px">
+            <tr id="tr1">
+                <td class="impar"> celda1</td>
+                <td class="par" id="delete"> celda2</td>
+
+            </tr>
+        </table>
+        <script>
+            var numero = 1;
+            function agregarCelda() {
+                // 1 obtener el elemento a manipular
+                var fila = document.querySelector("#tr1");
+
+                //2 manipulacion
+                var celda = document.createElement("td"); 
+                celda.innerHTML = "celda " + numero;
+                if ((numero % 2) === 0) {
+                    celda.setAttribute("class", "par");
+                } else {
+                    celda.setAttribute("class", "impar");
+                }
+                
+                // agrego lo nuevo a una elemento existente
+                fila.appendChild(celda);
+                numero++;
+
+            }
+
+            function eliminarCelda(){
+                  // 1 obtener el elemento a manipular
+                var fila = document.querySelector("#tr1");
+               // fila.remove(); // remove elimina el elemento
+                if(fila.hasChildNodes()){//verificar
+                    fila.removeChild(fila.firstChild);
+                    numero--;
+                }else{
+                    alert("ya no hay celdas para eliminar");
+                }
+                // como elimnar un nodo en concreto
+                var aeliminar = document.getElementById("delete");
+                 fila.removeChild(aeliminar);
+            }
+            
+            function eliminarTodos(){
+                     // 1 obtener el elemento a manipular
+                var fila = document.querySelector("#tr1");
+                while(fila.hasChildNodes()){
+                    fila.removeChild(fila.lastChild);
+                     numero--;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

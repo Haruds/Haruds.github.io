@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <div id="primero">TODO write content</div>
+          <div>TODO write content</div>
+           <div>TODO write content</div>
+        <script type="text/javascript">
+            document.write("<h1 style='color:red'>Hola desde javascript</h1>");
+            
+            alert("ventana de Mensaje");
+            
+            console.log("Escribiendo en la consola");
+            
+            document.getElementById("primero").innerHTML = "<p><span>Cambiado desde javascript</span></p>";
+            // innerHTML representa el contenido del elemento
+            
+        
+            function cambiar(){
+                var num= 23*34;
+                    document.getElementById("ultimo").innerHTML="Este es el ultimo div" +num;
+           }
+        </script>
+
+        <div id="ultimo" onclick="cambiar()">TODO write content</div>
+    </body>
+</html>

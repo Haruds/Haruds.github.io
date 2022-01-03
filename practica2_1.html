@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo JS DOM</title>
+        <meta charset="UTF-8">
+        <style>
+            img{width: 100px;
+                height: 100px;}
+            </style>
+
+        </head>
+        <body>
+            <script type="text/javascript">
+                function encender() {
+                    // 1 obtener los elementos a manipular
+                    var enlace = document.getElementById("link1");
+                    var img = document.querySelector("img");// obtiene la primera imagen
+                    // 2.manipulacion
+                    enlace.innerHTML="<span>Encendido</span>";
+                    img.src= "img/on.jpg";
+
+                }
+                function apagar() {
+                     // 1 obtener los elementos a manipular
+                    var enlace = document.getElementById("link1");
+                    var img = document.querySelector("img");// obtiene la primera imagen
+                    // 2. manipulacion
+                    enlace.innerHTML="Apagado";
+                    img.src= "img/off.jpg";
+                 //   img.setAttribute("src","img/off.jpg"); //logra lo mismo que lalinea 29
+                }
+
+            </script>
+
+            <div id="datos">
+            <a href="#" id="link1" onmouseover="encender()" onmouseout="apagar()">Apagado</a>
+            <img id="imagen1" src="img/off.jpg" alt="imagen luz"/>
+            
+        </div>
+
+    </body>
+
+
+
+</html>

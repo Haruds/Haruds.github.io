@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo JS DOM</title>
+        <meta charset="UTF-8">
+
+        <style>
+            .miclase{
+                background:#777;
+
+            }
+        </style>
+        <script type="text/javascript">
+            function cambiarEstilo(color, tamanio) {
+                // obtener los elementos a manipular
+                var parrafo = document.getElementById("p1");
+                parrafo.style.color = color;
+                parrafo.style.fontSize = tamanio;
+                parrafo.style.fontFamily = "Arial";
+
+                 var enlace = document.getElementById("a1");
+                enlace.style.border="2px solid red";
+                enlace.setAttribute("href", "http://www.youtube.com");
+                enlace.setAttribute("class","miclase");
+                
+                alert(enlace.getAttribute("href"));
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <p id="p1">Hello world!</p>
+        <a id="a1">Enlace</a>
+        <input type="button" id="boton" onclick="cambiarEstilo('blue', 30)" value="Cambiar estilo" />
+    </body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled Document</title>
+        <script type="text/javascript">
+           
+          var zoomMas=0;
+           var zoomMenos=0;
+            var normal=100;
+            function cambiarlink(opcion){
+               // obtener el elemento a manipular
+               var img = document.getElementById("imagen1");
+               zoomMas = img.width;
+               zoomMenos= img.width;
+               
+               switch(opcion){
+                   case "mas":
+                       zoomMas +=50;
+                       img.style.width = zoomMas +"px";
+                       img.style.heigth = zoomMas +"px";
+                       break;
+                     case "menos":
+                       zoomMenos -=50;
+                       img.style.width = zoomMenos +"px";
+                       img.style.heigth = zoomMenos +"px";
+                       break; 
+                     case "restaurar":
+                       img.style.width = normal +"px";
+                       img.style.heigth = normal +"px";
+                       break; 
+               }
+               
+           }
+        </script>
+    </head>
+    <body>
+        <p id="nodop">
+            <a href="#" onclick="cambiarlink('mas');" id="link1">zoom +</a>
+            <a href="#" onclick="cambiarlink('menos');" id="link2">zoom -</a>
+            <a href="#" onclick="cambiarlink('restaurar');" id="link3">restaurar</a>
+        </p>
+        <img id="imagen1" src="img/on.jpg" style="width:100px;heigth:100px" alt="encendido"/>
+
+    </body>
+</html>
